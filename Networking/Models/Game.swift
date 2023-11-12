@@ -7,13 +7,12 @@
 
 import Foundation
 
-struct videoGame: Decodable {
-    let internalName: String
-    let metacriticScore: String
-    let normalPrice: String
-    let salePrice: String
-    let savings: String
+struct VideoGame: Decodable {
+    let internalName: String?
+    let metacriticScore: String?
+    let normalPrice: String?
+    let salePrice: String?
+    let savings: String?
     let steamRatingText: String?
-    let thumb: String
 }
 

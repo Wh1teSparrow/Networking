@@ -83,7 +83,7 @@ extension GameViewController {
             let jsonDecoder = JSONDecoder()
             
             do {
-                let games = try jsonDecoder.decode([videoGame].self , from: data)
+                let games = try jsonDecoder.decode([VideoGame].self , from: data)
                 self.showAlert(withStatus: .success)
                 print(games)
             } catch let error {
