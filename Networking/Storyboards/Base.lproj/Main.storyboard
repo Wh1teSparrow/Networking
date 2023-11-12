@@ -12,7 +12,7 @@
         <!--Games-->
         <scene sceneID="Xz9-qb-kQ1">
             <objects>
-                <collectionViewController id="ttB-9V-RVA" customClass="ViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="ttB-9V-RVA" customClass="GameViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6mA-zg-Duj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,7 +93,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
