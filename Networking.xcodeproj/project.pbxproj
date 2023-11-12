@@ -60,12 +60,11 @@
 		B0691A252B00BB570090608D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				B0691A3E2B00BBEF0090608D /* Models */,
 				B0691A3B2B00BB850090608D /* Resources */,
+				B0691A3A2B00BB7A0090608D /* App */,
 				B0691A3C2B00BB9A0090608D /* ViewControllers */,
 				B0691A3D2B00BBAA0090608D /* Storyboards */,
-				B0691A3A2B00BB7A0090608D /* App */,
-				B0691A412B00CA270090608D /* CollectionViewCell.swift */,
+				B0691A3E2B00BBEF0090608D /* Models */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -92,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				B0691A2A2B00BB570090608D /* GameViewController.swift */,
+				B0691A412B00CA270090608D /* CollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
