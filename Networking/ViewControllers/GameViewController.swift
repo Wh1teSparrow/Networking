@@ -31,7 +31,7 @@ enum Alert {
 }
 
 
-final class ViewController: UICollectionViewController {
+final class GameViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ final class ViewController: UICollectionViewController {
 }
 
 // MARK: UICollectionViewDataSource
-extension ViewController {
+extension GameViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         1
     }
@@ -64,13 +64,13 @@ extension ViewController {
 }
 
 // MARK: UICollectionViewDelegate
-extension ViewController {
+extension GameViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         fetchGamesInfo()
     }
 }
 
-extension ViewController {
+extension GameViewController {
     private func fetchGamesInfo() {
         let url = URL(string: "https://www.cheapshark.com/api/1.0/deals?upperPrice=15")!
         
