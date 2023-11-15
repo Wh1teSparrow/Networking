@@ -63,8 +63,8 @@ extension GameTableViewController {
         //            networkManager.fetch(Game.self, from: networkManager.url) { result in
         //                switch result {
         //
-        //                case .success(let  result):
-        //                    self.games = [result]
+        //                case .success(_):
+        //                    print("qwew")
         //                case .failure(_):
         //                    print("bgkk")
         //                }

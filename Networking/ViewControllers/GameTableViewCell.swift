@@ -8,7 +8,7 @@
 import UIKit
 
 final class GameTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var gameImage: UIImageView!
     @IBOutlet weak var gameTitleLabel: UILabel!
     @IBOutlet weak var gameSteamRatingLabel: UILabel!

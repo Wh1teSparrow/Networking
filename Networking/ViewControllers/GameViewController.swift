@@ -10,7 +10,7 @@ import UIKit
 //enum Alert {
 //    case success
 //    case failed
-//    
+//
 //    var title: String {
 //        switch self {
 //        case .success:
@@ -19,7 +19,7 @@ import UIKit
 //            return "Failed"
 //        }
 //    }
-//    
+//
 //    var message: String {
 //        switch self {
 //        case .success:
@@ -41,14 +41,14 @@ final class GameViewController: UICollectionViewController {
         }
     }
     
-//    private func showAlert(withStatus status: Alert) {
-//        let alert = UIAlertController(title: status.title, message: status.message, preferredStyle: .alert)
-//        let okAction = UIAlertAction(title: "OK", style: .default)
-//        alert.addAction(okAction)
-//        present(alert, animated: true)
-//        
-//    }
-
+    //    private func showAlert(withStatus status: Alert) {
+    //        let alert = UIAlertController(title: status.title, message: status.message, preferredStyle: .alert)
+    //        let okAction = UIAlertAction(title: "OK", style: .default)
+    //        alert.addAction(okAction)
+    //        present(alert, animated: true)
+    //
+    //    }
+    
 }
 
 // MARK: UICollectionViewDataSource
