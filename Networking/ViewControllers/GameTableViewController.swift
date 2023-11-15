@@ -9,9 +9,10 @@ import UIKit
 
 final class GameTableViewController: UITableViewController {
     
+    let networkManager = NetworkManager.shared
+    
     private var games: [Game] = []
     
-    let networkManager = NetworkManager.shared
     
 }
 
