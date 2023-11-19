@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 final class GameTableViewController: UITableViewController {
     
@@ -41,34 +42,15 @@ extension GameTableViewController {
 // MARK: - Networking
 extension GameTableViewController {
     func fetchGames() {
-        URLSession.shared.dataTask(with: networkManager.url) { [weak self] data, _, error in
-            guard let data = data else {
-                print(error.debugDescription)
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
+        networkManager.fetchGames(from: networkManager.url) { result in
+            switch result {
                 
-                self?.games = try decoder.decode([Game].self, from: data)
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            } catch let error {
-                print(error.localizedDescription)
+            case .success(let games):
+                self.games = games
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
             }
-            
-        }.resume()
-        
-        //            networkManager.fetch(Game.self, from: networkManager.url) { result in
-        //                switch result {
-        //
-        //                case .success(_):
-        //                    print("qwew")
-        //                case .failure(_):
-        //                    print("bgkk")
-        //                }
-        //            }
-        //        }
+        }
     }
 }

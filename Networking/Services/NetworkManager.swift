@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum NetworkError: Error {
     case invalidURL
@@ -20,37 +21,32 @@ final class NetworkManager {
     
     let url = URL(string: "https://www.cheapshark.com/api/1.0/deals?upperPrice=15")!
     
-    func fetchImage(from url: URL, completion: @escaping(Result<Data, NetworkError>) -> Void) {
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: url) else {
-                completion(.failure(.noData))
-                return
+    func fetchImage(from url: String, completion: @escaping(Result<Data, AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseData { dataResponse in
+                switch dataResponse.result {
+                case .success(let data):
+                    completion(.success(data))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
-            DispatchQueue.main.async {
-                completion(.success(imageData))
-            }
-        }
     }
     
-    func fetch<T: Decodable>(_ type: T.Type, from url: URL, comletion: @escaping(Result<T, NetworkError>) -> Void) {
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data else {
-                comletion(.failure(.noData))
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                
-                let type = try decoder.decode(T.self, from: data)
-                DispatchQueue.main.async {
-                    comletion(.success(type))
+    func fetchGames(from url: URL, comletion: @escaping(Result<[Game], AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let games = Game.getGames(from: value)
+                    comletion(.success(games))
+                case .failure(let error):
+                    comletion(.failure(error))
                 }
-            } catch {
-                comletion(.failure(.decodingError))
+                
             }
-            
-        }.resume()
     }
 }
 
